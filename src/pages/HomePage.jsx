@@ -4,8 +4,8 @@ import bubble from '../components/Animation/background/bubble';
 
 const HomePage = () => (
   <CanvasContainer
-    width={500}
-    height={250}
+    width="100%"
+    height="100vh"
     animation={bubble}
     background="linear-gradient(0deg, #1a237e 0%, #0091ea 100%)"
   />

@@ -1,13 +1,17 @@
 /* eslint-disable no-shadow */
 import React, { useState, useEffect, createRef } from 'react';
 
-const bubble = (canvas, ctx, amount = 40) => {
+const bubble = (canvas, ctx, amount = 50) => {
+  canvas.style.width = '100%';
+  canvas.style.height = '100%';
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
   const element = () => {
     const xPos = () => Number.parseInt(Math.random() * canvas.width, 0);
     const yPos = () =>
       canvas.height + Number.parseInt(Math.random() * canvas.height * 2, 0);
     const size = () => Number.parseInt((Math.random() + 0.1) * 7, 0);
-    const dy = 0.3;
+    const plus = () => Math.random() > 0.5;
     const createBubble = amount => {
       const result = [];
       for (let i = 1; i <= amount; i += 1) {
@@ -15,6 +19,8 @@ const bubble = (canvas, ctx, amount = 40) => {
           xPos: xPos(),
           yPos: yPos(),
           size: size(),
+          plus: plus(),
+          step: 0,
         };
         result.push(bubble);
       }
@@ -46,10 +52,55 @@ const bubble = (canvas, ctx, amount = 40) => {
     const ball = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       allBubble = allBubble.map(bubble => {
+        const stepBubble = Number.parseInt(bubble.size + 3, 0);
         if (bubble.yPos < 0) {
-          return { xPos: xPos(), yPos: yPos(), size: size() };
+          return {
+            xPos: xPos(),
+            yPos: yPos(),
+            size: size(),
+            plus: plus(),
+            step: 0,
+          };
         }
-        return { ...bubble, yPos: bubble.yPos - dy };
+        const newYPos = bubble.yPos - bubble.size / 3;
+        if (bubble.plus && bubble.step < stepBubble) {
+          const newXPos = bubble.xPos + bubble.size / 30;
+          return {
+            ...bubble,
+            step: bubble.step + 1,
+            xPos: newXPos,
+            yPos: newYPos,
+          };
+        }
+        if (bubble.plus && bubble.step === stepBubble) {
+          const newXPos = bubble.xPos + bubble.size / 40;
+          return {
+            ...bubble,
+            step: bubble.step + 1,
+            plus: !bubble.plus,
+            xPos: newXPos,
+            yPos: newYPos,
+          };
+        }
+        if (!bubble.plus && bubble.step > 0 - stepBubble) {
+          const newXPos = bubble.xPos - bubble.size / 40;
+          return {
+            ...bubble,
+            step: bubble.step - 1,
+            xPos: newXPos,
+            yPos: newYPos,
+          };
+        }
+        if (!bubble.plus && bubble.step === 0 - stepBubble) {
+          const newXPos = bubble.xPos - bubble.size / 40;
+          return {
+            ...bubble,
+            step: bubble.step - 1,
+            plus: !bubble.plus,
+            xPos: newXPos,
+            yPos: newYPos,
+          };
+        }
       });
       allBubble.forEach((bubble, index) => {
         big(bubble);
