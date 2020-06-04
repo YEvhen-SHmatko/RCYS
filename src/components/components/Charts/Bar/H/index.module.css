@@ -1,0 +1,13 @@
+.list {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  list-style: none;
+  box-sizing: border-box;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  flex-direction: column;
+  justify-content: flex-end;
+}
