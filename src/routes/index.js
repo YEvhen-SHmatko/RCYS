@@ -5,9 +5,9 @@ const HomePage = React.lazy(() =>
 );
 const repositori = '';
 const routes = {
-  Home: {
+  HomePage: {
     path: `${repositori}/`,
-    components: HomePage,
+    component: HomePage,
   },
 };
 export default routes;

@@ -1,0 +1,25 @@
+{
+  "files": {
+    "HomePage.js": "/static/js/HomePage.906e7cd8.chunk.js",
+    "HomePage.js.map": "/static/js/HomePage.906e7cd8.chunk.js.map",
+    "main.css": "/static/css/main.073c718e.chunk.css",
+    "main.js": "/static/js/main.2f5bcec7.chunk.js",
+    "main.js.map": "/static/js/main.2f5bcec7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7e3eea38.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7e3eea38.js.map",
+    "static/js/3.5e05ed18.chunk.js": "/static/js/3.5e05ed18.chunk.js",
+    "static/js/3.5e05ed18.chunk.js.map": "/static/js/3.5e05ed18.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a1a22892e6d75c98298111aa45d2c985.js": "/precache-manifest.a1a22892e6d75c98298111aa45d2c985.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.073c718e.chunk.css.map": "/static/css/main.073c718e.chunk.css.map",
+    "static/js/3.5e05ed18.chunk.js.LICENSE.txt": "/static/js/3.5e05ed18.chunk.js.LICENSE.txt",
+    "static/media/Roboto.css": "/static/media/roboto-v20-latin_cyrillic-regular.9af3b948.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7e3eea38.js",
+    "static/js/3.5e05ed18.chunk.js",
+    "static/css/main.073c718e.chunk.css",
+    "static/js/main.2f5bcec7.chunk.js"
+  ]
+}
